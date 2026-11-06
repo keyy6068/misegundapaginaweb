@@ -1,0 +1,114 @@
+<!--
+  ======================================================================
+  INSTITUCIÓN: CBTis 166 Pablo Torres Burgos
+  ----------------------------------------------------------------------
+  * Estudiante: Gaona Castro Eduardo Baltazar
+  * Grupo: 3B PRO VESP  
+  * Actividad: Práctica Temática sobre Formularios en HTML5
+  ====================================================================== -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería Sabores Intensos - Acceso y Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor principal que divide la pantalla en dos mitades -->
+    <div class="portal-container">
+
+        <!-- LADO IZQUIERDO: Panel de Marca de la Heladería (Sin tarjetas de hotel) -->
+        <div class="portal-brand-side">
+            <div class="brand-content">
+                
+                <!-- Insignia superior modificada -->
+                <div class="brand-badge">
+                    <span class="badge-dot"></span> Heladería De Confianza!!
+                </div>
+
+                <div class="brand-logo-large">
+                    <span class="logo-icon">🍦</span>
+                    <h1>Heladería <span style="color: #b19cd9;">Sabores Intensos</span></h1>    
+                </div>
+                
+                <p class="brand-tagline">
+                    Pida Todos Los Litros De Helado Que Quiera!!!! 
+                </p>
+
+                <!-- FORMULARIO DE SELECCIÓN DE HELADOS -->
+                <div class="brand-helado-box" style="margin-top: 30px; background: rgba(0, 0, 0, 0.4); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <form id="form-helado-lateral">
+                        <div class="input-group">
+                            <label for="sabor-favorito" style="color: #fff; display: block; margin-bottom: 8px; font-weight: bold;">Seleccione su Sabor Base Preferido:</label>
+                            <select id="sabor-favorito" name="sabor" required style="width: 100%; padding: 10px; border-radius: 6px; background: #fff; color: #333;">
+                                <option value="" disabled>-- Elige una opción --</option>
+                                
+                                <!-- Grupo 1: Cremosos (Con <optgroup> requerido) -->
+                                <optgroup label="Helados Cremosos">
+                                    <option value="vainilla" selected>Vainilla Tradicional </option>
+                                    <option value="chocolate">Chocolate Oscuro</option>
+                                    <option value="fresa">Fresa con Crema</option>
+                                </optgroup>
+
+                                <!-- Grupo 2: Frutales -->
+                                <optgroup label="Nieves de Agua / Frutales">
+                                    <option value="limon">Limón Real</option>
+                                    <option value="mango">Mango con Chamoy</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        
+
+        <!-- LADO DERECHO: Tarjeta del Formulario de Inicio de Sesión -->
+        <div class="portal-form-side">
+            <div class="login-card">
+                
+                <div class="login-header">
+                    <h2>Acceso al Portal</h2>
+                    <p>Ingrese sus credenciales para continuar</p>
+                </div>
+
+                <!-- Formulario de Inicio de Sesión -->
+                <form id="form-login" action="/login-procesar" method="POST">
+                    
+                    <div class="input-group">
+                        <label for="email">Correo Electrónico</label>
+                        <!-- Input con valor por defecto -->
+                        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required value="cliente.frecuente@correo.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-actions-help">
+                        <a href="recuperar.html" class="forgot-link">¿Olvidó su contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Iniciar Sesión</button>
+
+                </form>
+
+                <!-- Pie de tarjeta con opción de registro -->
+                <div class="login-footer">
+                    <p>¿No tiene una cuenta? <a href="registro.html">Registrarse aquí</a></p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
